@@ -1,51 +1,51 @@
 var jquery_jflow_test_utils = {
-	 horizontal: {
-		createItens : function(num) {
-	 		var $container = $('<div id="jflow"></div>');
-			var item = '';
-			$container.appendTo('#main');
-			num = num || 12;
-	    	for ( var i = 0; i < num; i++) {
-				item += '<div class="jflow-item">Teste jflow ' + i + '</div>';
-			}
-			$('#jflow').append(item);
-		 },
-
-	    createPaging : function() {
-	    	$('#jflow').after('<a href="#" id="jflow-next">proximo</a>');
-	    	$('#jflow').before('<a href="#" id="jflow-prev">anterior</a>');
+    horizontal: {
+	createItens : function(num) {
+	    var $container = $('<div id="jflow"></div>');
+	    var item = '';
+	    $container.appendTo('#main');
+	    num = num || 12;
+	    for ( var i = 0; i < num; i++) {
+		item += '<div class="jflow-item">Teste jflow ' + i + '</div>';
 	    }
+	    $('#jflow').append(item);
 	},
-	vertical : {
-		 createList : function(num) {
-	    	var $container = $('<div id="jflow"><ul></ul></div>');
-	 	    var item = '';
-	 	    $container.appendTo('#main');
 
-	    	num = num || 12;
-	    	for ( var i = 0; i < num; i++) {
-    			item += '<li class="horizontal-item">Teste jflow ' + i + '</li>';
-    		}
-    		$('#jflow ul').append(item);
-	    },
-
-	    createItens : function(num) {
-	    	var $container = $('<div id="jflow"><div></div></div>');
-	 	    var item = '';
-	 	    $container.appendTo('#main');
-
-	    	num = num || 12;
-	    	for ( var i = 0; i < num; i++) {
-    			item += '<p class="horizontal-item">Teste jflow ' + i + '</p>';
-    		}
-    		$('#jflow div').append(item);
-	    },
-
-	    createPaging : function() {
-	    	$('#jflow').after('<a href="#" id="jflow-horizontal-next">proximo</a>');
-	    	$('#jflow').before('<a href="#" id="jflow-horizontal-prev">anterior</a>');
-	    }
+	createPaging : function() {
+	    $('#jflow').after('<a href="#" id="jflow-next">proximo</a>');
+	    $('#jflow').before('<a href="#" id="jflow-prev">anterior</a>');
 	}
+    },
+    vertical : {
+	createList : function(num) {
+	    var $container = $('<div id="jflow"><ul></ul></div>');
+	    var item = '';
+	    $container.appendTo('#main');
+
+	    num = num || 12;
+	    for ( var i = 0; i < num; i++) {
+    		item += '<li class="horizontal-item">Teste jflow ' + i + '</li>';
+    	    }
+    	    $('#jflow ul').append(item);
+	},
+
+	createItens : function(num) {
+	    var $container = $('<div id="jflow"><div></div></div>');
+	    var item = '';
+	    $container.appendTo('#main');
+
+	    num = num || 12;
+	    for ( var i = 0; i < num; i++) {
+    		item += '<p class="horizontal-item">Teste jflow ' + i + '</p>';
+    	    }
+    	    $('#jflow div').append(item);
+	},
+
+	createPaging : function() {
+	    $('#jflow').after('<a href="#" id="jflow-horizontal-next">proximo</a>');
+	    $('#jflow').before('<a href="#" id="jflow-horizontal-prev">anterior</a>');
+	}
+    }
 }
 
 module("jQuery Flow Plugin modo horizontal",{
@@ -555,7 +555,7 @@ test("Quando clica em proximo desloca a quantidade de itens certa e habilita o b
 	$('#jflow-horizontal-next').trigger('click');
 	stop();
 	window.setTimeout(verificaContainer,800);
-	
+
 });
 
 test("Clica na paginacao no modo horizontal", function(){
