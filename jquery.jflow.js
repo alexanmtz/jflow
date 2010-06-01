@@ -1,5 +1,5 @@
- /**
-  * 
+/**
+  *
   * @name jQuery
   * @namespace
   * @author Alexandre Magno (http://blog.alexandremagno.net)
@@ -32,21 +32,21 @@
   *
  */
 
- (function($) {
-    $.fn.jflow = function(params){
+(function($) {
+     $.fn.jflow = function(params){
 
-        var options = {
-            item: '.jflow-item',
-            itens: 5,
-            inativeClass : 'inativo',
-            prev: '.jflow-prev a',
-            next: '.jflow-next a',
-            mode: 'vertical',
-            pager: false,
-            speed: 800
-        }
+         var options = {
+             item: '.jflow-item',
+             itens: 5,
+             inativeClass : 'inactive',
+             prev: '.jflow-prev a',
+             next: '.jflow-next a',
+             mode: 'vertical',
+             pager: false,
+             speed: 800
+         }
 
-        var op = $.extend(options, params);
+         var op = $.extend(options, params);
          var $self = this;
          var count = 0;
          var $flowbox = $(op.item);
@@ -70,80 +70,80 @@
          var pages = Math.ceil(li_count/op.itens);
 
          if(op.mode=='vertical') {
-        	 $self.css({
-	             'height':overflow_size,
-	             'overflow' : 'hidden'
-	         });
+             $self.css({
+	                   'height':overflow_size,
+	                   'overflow' : 'hidden'
+	               });
          } else {
-        	 $self.css({
-        		 'width': overflow_size,
-        		 'overflow':'hidden'
-        	 });
-        	 $self.children(':first').css({
-	             'width':overall_size
-	         });
+             $self.css({
+        		   'width': overflow_size,
+        		   'overflow':'hidden'
+        	       });
+             $self.children(':first').css({
+	                                      'width':overall_size
+	                                  });
          }
 
          if(op.pager) {
 
-        	 var pager = '';
-        	 for(var i=0;i<pages;i++) {
-        		 pager+='<li><a href="#" id="jflow-page-'+ i +'">pagina '+ i +'</a></li>';
-        	 }
-        	 $(op.pager).append('<ul>'+pager+'</ul>');
+             var pager = '';
+             for(var i=0;i<pages;i++) {
+        	 pager+='<li><a href="#" id="jflow-page-'+ i +'">pagina '+ i +'</a></li>';
+             }
+             $(op.pager).append('<ul>'+pager+'</ul>');
          }
 
          $(op.prev).addClass(op.inativeClass).bind('click',function(){
-            if(count>0) {
-                count-=op.itens;
-                $self.scrollTo( $(op.item).eq(count), op.speed, {onAfter: function (){
-                    if(count==0) {
-                        $(op.prev).addClass(op.inativeClass);
-                    }
-                }});
-                $(op.next).removeClass(op.inativeClass);
-            }
-            //IE 7 Bug
-            $(this).blur();
-            return false;
-         });
+                                                       if(count>0) {
+                                                           count-=op.itens;
+                                                           $self.scrollTo( $(op.item).eq(count), op.speed, {onAfter: function (){
+                                                                                                                if(count==0) {
+                                                                                                                    $(op.prev).addClass(op.inativeClass);
+                                                                                                                }
+                                                                                                            }});
+                                                           $(op.next).removeClass(op.inativeClass);
+                                                       }
+                                                       //IE 7 Bug
+                                                       $(this).blur();
+                                                       return false;
+                                                   });
 
          $(op.next).bind('click',function(){
-        	 	if(count<max_itens) {
-                    count+=op.itens;
-                    $self.scrollTo( $(op.item).eq(count), op.speed, {onAfter: function (){
-                    	if(count>=max_itens) {
-                           $(op.next).addClass(op.inativeClass);
-                        }
-                    }});
-                    $(op.prev).removeClass(op.inativeClass);
-                }
-                //IE7 Bug
-                $(this).blur();
-                return false;
-         });
+        	 	     if(count<max_itens) {
+                                 count+=op.itens;
+                                 $self.scrollTo( $(op.item).eq(count), op.speed, {onAfter: function (){
+                    	                                                              if(count>=max_itens) {
+                                                                                          $(op.next).addClass(op.inativeClass);
+                                                                                      }
+                                                                                  }});
+                                 $(op.prev).removeClass(op.inativeClass);
+                             }
+                             //IE7 Bug
+                             $(this).blur();
+                             return false;
+                         });
 
          $(op.pager).bind('click',function(e){
-        	 var $target = $(e.target);
-        	 if($target.is('a')) {
-        		 var index = $target.attr('id').split('-')[2];
-        		 count = index * op.itens;
-        		 $self.scrollTo( $(op.item).eq(count), op.speed, {
-					onAfter: function(){
-						if(count>=max_itens) {
-                           $(op.next).addClass(op.inativeClass);
-						   $(op.prev).removeClass(op.inativeClass);
-                        }
-						if(count==0) {
-                        	$(op.prev).addClass(op.inativeClass);
-							$(op.next).removeClass(op.inativeClass);
-                    	}
-					}
-				 });
-        	 }
-        	 return false;
-         });
+        	              var $target = $(e.target);
+        	              if($target.is('a')) {
+        		          var index = $target.attr('id').split('-')[2];
+        		          count = index * op.itens;
+        		          $self.scrollTo( $(op.item).eq(count), op.speed, {
+					              onAfter: function(){
+						          if(count>=max_itens) {
+                                                              $(op.next).addClass(op.inativeClass);
+						              $(op.prev).removeClass(op.inativeClass);
+                                                          }
+						          if(count==0) {
+                        	                              $(op.prev).addClass(op.inativeClass);
+							      $(op.next).removeClass(op.inativeClass);
+                    	                                  }
+					              }
+				                  });
+        	              }
+        	              return false;
+                          });
 
-    };
+     };
 
-})(jQuery);
+ })(jQuery);

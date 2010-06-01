@@ -378,7 +378,7 @@ test("O container dimensiona o tamanho corretamente quando exist margem, padding
 
 test("O container dimensiona o tamanho corretamente quando o item deslizante nao tem dimensoes explicitas por css", function(){
 
-	expect(6); //referentes a quantidade de elementos que estao no container
+	expect(7); //referentes a quantidade de elementos que estao no container
 
 	jquery_jflow_test_utils.vertical.createList();
 
