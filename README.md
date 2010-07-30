@@ -110,11 +110,11 @@ If you wish to use with ajax for a larg amount of itens, I'm working on that for
    
 ## Javascript
    <script type="text/javascript">
-   $(function(){
-	   $('#container').jflow({
-	   	itens: 3,
-	   	mode: 'horizontal'
+	   $(function(){
+		   $('#container').jflow({
+		   	itens: 3,
+		   	mode: 'horizontal'
+		   });
 	   });
-   });
    </script>
   
