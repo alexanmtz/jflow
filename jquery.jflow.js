@@ -1,18 +1,19 @@
 /**
   *
-  * @name jQuery
-  * @namespace
+  * @name jQuery jFlow
+  * @namespace jQuery
   * @author Alexandre Magno (http://blog.alexandremagno.net)
   * @version 1.0
   * @description Plugin de jQuery para Carousel que suporta orientacao vertical e horizontal
   * @requires jquery.scrollTo-min.js
-  * @param {String} [item=".jflow-item"] O seletor usado como referencia para o carousel
-  * @param {Number} [itens=5] A quantidade de itens que ira deslizar no carousel
-  * @param {String} [inativeClass="inativo"] Classe inserida na paginacao quando chegar nos limites de paginacao
-  * @param {String} [prev=".jflow-pag a"] Seletor usado como botao de voltar
-  * @param {String} [next=".jflow-pag a"] Seletor usado como botao de avancar
-  * @param {String} [mode="vertical"] Modo de orientacao dos slides, aceita os parametros horizontal e vertical
-  * @param {Number} [speed=800] Velocidade em milisegundos do slide
+  * @param {Object} params O objeto de opcoes do plugin
+  * @param {String} [params.item=".jflow-item"] O seletor usado como referencia para o carousel
+  * @param {Number} [params.itens=5] A quantidade de itens que ira deslizar no carousel
+  * @param {String} [params.inativeClass="inativo"] Classe inserida na paginacao quando chegar nos limites de paginacao
+  * @param {String} [params.prev=".jflow-pag a"] Seletor usado como botao de voltar
+  * @param {String} [params.next=".jflow-pag a"] Seletor usado como botao de avancar
+  * @param {String} [params.mode="vertical"] Modo de orientacao dos slides, aceita os parametros horizontal e vertical
+  * @param {Number} [params.speed=800] Velocidade em milisegundos do slide
   * @param {Boolean|String} [pager=false] O container onde sera gerada a paginacao
   * @example
   * <div id="container">
