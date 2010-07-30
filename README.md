@@ -53,7 +53,7 @@ If you wish to use with ajax for a larg amount of itens, I'm working on that for
 
 # Documentation
 	This is the plugin options that can be used
-	
+	-------------------------------------------
 	> ## item
 	> * type: String
 	> * default: .jflow-item
@@ -93,7 +93,7 @@ If you wish to use with ajax for a larg amount of itens, I'm working on that for
 	> * type: Boolean or String
 	> * default: false
 	> * description: False to not use pagination or the pagination container to generate paging to navigate throught slides		
-
+	----------------------------------------------------
 #Examples
 
 ## Markup  
@@ -108,9 +108,10 @@ If you wish to use with ajax for a larg amount of itens, I'm working on that for
    </div>
    
 ## Javascript
-   
+   <script type="text/javascript">
    $('#container').jflow({
    	itens: 3,
    	mode: 'horizontal'
    });
+   </script>
   
