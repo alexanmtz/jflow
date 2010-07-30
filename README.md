@@ -52,47 +52,48 @@ If you wish to use with ajax for a larg amount of itens, I'm working on that for
   </script>
 
 # Documentation
-	This is the plugin options that can be used
 	
-	## item
-	* type: String
-	* default: .jflow-item
-	* description: The selector used as reference. This will be the item slided
-	
-	## itens
-	* type: Number
-	* default: 5
-	* description: Itens amount that will be slided per time
-	
-	## inativeClass
-	* type: String
-	* default: .inativo
-	* description: The class name applied when the item is inative 
-	
-	## prev
-	* type: String
-	* default: .jflow-prev a
-	* description: Seletor used to be the handler for the prev page
-	
-	## next
-	* type: String
-	* default: .jflow-next a
-	* description: Seletor used to be the handler for the prev page  
-	
-	## mode
-	* type: String
-	* default: vertical
-	* description: orientation mode, this parameter accepts orizontal and vertical
-	
-	## speed
-	* type: Number
-	* default: 800
-	* description: The speed in miliseconds of the slide movement
-	
-	## pager
-	* type: Boolean or String
-	* default: false
-	* description: False to not use pagination or the pagination container to generate paging to navigate throught slides		
+> This is the plugin options that can be used
+
+## item
+* type: String
+* default: .jflow-item
+* description: The selector used as reference. This will be the item slided
+
+## itens
+* type: Number
+* default: 5
+* description: Itens amount that will be slided per time
+
+## inativeClass
+* type: String
+* default: .inativo
+* description: The class name applied when the item is inative 
+
+## prev
+* type: String
+* default: .jflow-prev a
+* description: Seletor used to be the handler for the prev page
+
+## next
+* type: String
+* default: .jflow-next a
+* description: Seletor used to be the handler for the prev page  
+
+## mode
+* type: String
+* default: vertical
+* description: orientation mode, this parameter accepts orizontal and vertical
+
+## speed
+* type: Number
+* default: 800
+* description: The speed in miliseconds of the slide movement
+
+## pager
+* type: Boolean or String
+* default: false
+* description: False to not use pagination or the pagination container to generate paging to navigate throught slides		
 
 #Examples
 
