@@ -1,6 +1,6 @@
 /**
  *
- * @name jQuery jFlow
+ * @name jFlow
  * @namespace jQuery
  * @author Alexandre Magno (http://blog.alexandremagno.net)
  * @version 1.0
@@ -14,7 +14,7 @@
  * @param {String} [params.next=".jflow-next a"] Seletor usado como botao de avancar
  * @param {String} [params.mode="vertical"] Modo de orientacao dos slides, aceita os parametros horizontal e vertical
  * @param {Number} [params.speed=800] Velocidade em milisegundos do slide
- * @param {Boolean|String} [pager=false] O container onde sera gerada a paginacao
+ * @param {Boolean|String} [params.pager=false] O container onde sera gerada a paginacao
  * @example
  * <div id="container">
  * 	<ul>
@@ -26,6 +26,7 @@
  * </div>
  * $('#container').jflow({
  * 	itens: 3,
+ *  item: '#container ul li',
  * 	mode: 'horizontal'
  * });
  * @returns {Object} jQuery
