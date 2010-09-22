@@ -293,6 +293,30 @@ test("Clica na paginacao", function(){
 	window.setTimeout(verificaContainer,800);
 });
 
+test("adiciona uma classe active no item atual da paginacao", function(){
+
+	jquery_jflow_test_utils.horizontal.createItens(12);
+	jquery_jflow_test_utils.horizontal.createPaging();
+	$('#main').append('<div id="jflow-pager"></div>');
+
+	$('#jflow').jflow({
+		 prev: '#jflow-prev',
+        next: '#jflow-next',
+        pager: '#jflow-pager'
+	});
+	
+	var firstItem = $('#jflow-page-1');
+
+	function verificaItemAtivo() {
+		ok(firstItem.hasClass('active'), "O item precisa ter a classe active no item atual");
+		start();
+	}
+	firstItem.trigger('click');
+	stop();
+	window.setTimeout(verificaItemAtivo,800);
+	
+});
+
 module("jQuery Flow Plugin modo vertical",{
 
 	teardown: function() {
