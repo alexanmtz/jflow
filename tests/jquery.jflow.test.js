@@ -304,14 +304,13 @@ test("adiciona uma classe active no item atual da paginacao", function(){
         next: '#jflow-next',
         pager: '#jflow-pager'
 	});
-	
-	var firstItem = $('#jflow-page-1');
 
 	function verificaItemAtivo() {
-		ok(firstItem.hasClass('active'), "O item precisa ter a classe active no item atual");
+		ok($('#jflow-page-1').hasClass('active'), "O item precisa ter a classe active no item atual");
+		ok(!$('.jflow-page-item').not('#jflow-page-1').hasClass('active'), "Os itens da paginacao alem do atual nao podem ter a classe active");
 		start();
 	}
-	firstItem.trigger('click');
+	$('#jflow-page-1').trigger('click');
 	stop();
 	window.setTimeout(verificaItemAtivo,800);
 	
