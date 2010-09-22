@@ -340,7 +340,7 @@ test("callback de paginacao de proximo", function(){
 		 prev: '#jflow-prev',
         next: '#jflow-next',
         onNext: function() {
-            ok(true,'entrou no callback');
+            ok(true,'entrou no callback proximo');
             start();
         }    
 	});
