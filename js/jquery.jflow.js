@@ -44,7 +44,8 @@
             next: '.jflow-next a',
             mode: 'vertical',
             pager: false,
-            speed: 800
+            speed: 800,
+            onNext: function(){}
         }
         
         var op = $.extend(options, params);
@@ -121,6 +122,7 @@
                         if (count >= max_itens) {
                             $(op.next).addClass(op.inativeClass);
                         }
+                        op.onNext.call(this);
                     }
                 });
                 $(op.prev).removeClass(op.inativeClass);

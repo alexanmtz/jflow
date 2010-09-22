@@ -316,6 +316,39 @@ test("adiciona uma classe active no item atual da paginacao", function(){
 	
 });
 
+
+module("Callbacks",{
+
+	teardown: function() {
+		$('#jflow').remove();
+	}
+	
+	
+
+});
+
+test("callback de paginacao de proximo", function(){
+
+    expect(1);
+    
+	jquery_jflow_test_utils.horizontal.createItens(12);
+	jquery_jflow_test_utils.horizontal.createPaging();
+	
+	var control = false;
+
+	$('#jflow').jflow({
+		 prev: '#jflow-prev',
+        next: '#jflow-next',
+        onNext: function() {
+            ok(true,'entrou no callback');
+            start();
+        }    
+	});
+
+	$('#jflow-next').trigger('click');
+	stop();
+});
+
 module("jQuery Flow Plugin modo vertical",{
 
 	teardown: function() {
@@ -569,7 +602,7 @@ test("Quando clica em proximo desloca a quantidade de itens certa e habilita o b
 			if(el_pos.left < final_pos && el_pos.left >= container_pos.left ) {
 				ok(true,'O elemento esta no container' );
 			} else {
-				ok(false,'O elemento esta fora - top do elemento: ' + el_pos.left + ' / inicial do container: ' + container_pos.left + ' - posicao final do container: ' + final_left );
+				ok(false,'O elemento esta fora - top do elemento: ' + el_pos.left + ' / inicial do container: ' + container_pos.left + ' - posicao final do container: ' + final_pos );
 			}
 		});
 		start();
