@@ -316,6 +316,46 @@ test("adiciona uma classe active no item atual da paginacao", function(){
 	
 });
 
+test("coloca a classe ativa no segundo item quando clica em proximo", function(){
+
+	jquery_jflow_test_utils.horizontal.createItens(12);
+	jquery_jflow_test_utils.horizontal.createPaging();
+	$('#main').append('<div id="jflow-pager"></div>');
+
+	$('#jflow').jflow({
+		 prev: '#jflow-prev',
+        next: '#jflow-next',
+        pager: '#jflow-pager'
+	});
+
+	function verificaItemAtivo() {
+		ok($('#jflow-page-2').hasClass('active'), "O item precisa ter a classe active no item atual");
+		ok(!$('.jflow-page-item').not('#jflow-page-2').hasClass('active'), "Os itens da paginacao alem do atual nao podem ter a classe active");
+		start();
+	}
+	$('#jflow-next').trigger('click');
+	stop();
+	window.setTimeout(verificaItemAtivo,800);
+	
+});
+
+test("inicia com o primeiro item da paginacao ativo", function(){
+
+	jquery_jflow_test_utils.horizontal.createItens(12);
+	jquery_jflow_test_utils.horizontal.createPaging();
+	$('#main').append('<div id="jflow-pager"></div>');
+
+	$('#jflow').jflow({
+		 prev: '#jflow-prev',
+        next: '#jflow-next',
+        pager: '#jflow-pager'
+	});
+
+	ok($('#jflow-page-1').hasClass('active'), "O item precisa ter a classe active no item atual");
+	ok(!$('.jflow-page-item').not('#jflow-page-1').hasClass('active'), "Os itens da paginacao alem do atual nao podem ter a classe active");
+	
+});
+
 
 module("Callbacks",{
 

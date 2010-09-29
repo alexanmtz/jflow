@@ -3,7 +3,7 @@
  * @name jFlow
  * @namespace jQuery
  * @author Alexandre Magno (http://blog.alexandremagno.net)
- * @version 1.0
+ * @version 1.3
  * @description Plugin de jQuery para Carousel que suporta orientacao vertical e horizontal
  * @requires jquery.scrollTo-min.js
  * @param {Object} params O objeto de opcoes do plugin
@@ -53,6 +53,7 @@
         var count = 0;
         var $flowbox = $(op.item);
         var li_count = $(op.item).length;
+		var page = 1;
         
         if (li_count <= op.itens) {
             $(op.next).addClass(op.inativeClass);
@@ -92,7 +93,13 @@
         
             var pager = '';
             for (var i = 1; i < pages+1; i++) {
-                pager += '<li><a href="#" class="jflow-page-item" id="jflow-page-' + i + '">pagina ' + i + '</a></li>';
+				if(i==1) {
+					var currentClass = 'jflow-page-item active';	
+				} else {
+					var currentClass = 'jflow-page-item';
+				}
+				 
+                pager += '<li><a href="#" class="'+currentClass+'" id="jflow-page-' + i + '">pagina ' + i + '</a></li>';
             }
             $(op.pager).append('<ul>' + pager + '</ul>');
         }
@@ -102,7 +109,10 @@
                 count -= op.itens;
                 $self.scrollTo($(op.item).eq(count), op.speed, {
                     onAfter: function(){
-                        if (count == 0) {
+                        page--;
+						$('.jflow-page-item').removeClass('active');
+						$("#jflow-page-"+page).addClass('active');
+						if (count == 0) {
                             $(op.prev).addClass(op.inativeClass);
                         }
                     }
@@ -119,7 +129,10 @@
                 count += op.itens;
                 $self.scrollTo($(op.item).eq(count), op.speed, {
                     onAfter: function(){
-                        if (count >= max_itens) {
+                        page ++;
+						$('.jflow-page-item').removeClass('active');
+						$("#jflow-page-"+page).addClass('active');
+						if (count >= max_itens) {
                             $(op.next).addClass(op.inativeClass);
                         }
                         op.onNext.call(this);

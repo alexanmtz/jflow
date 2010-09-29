@@ -1,11 +1,12 @@
 # jFlow
-> Version 1.1
+> Version 1.3
+	* Add active class in current active item of pagination
+	* Fix bug that don't activate it the current item when use previous and next
 
 # About the plugin ?
 
 This plugin is alternative for slider / carousel plugins out there. The reason that I develop this one is that I was needed a carousel
-that could support more complex markup structure inside the carousel container. Besides that, this is the first carousel plugin completely
-tested.
+that could support more complex markup structure inside the carousel container. Besides that, this is the first carousel plugin developed with TDD.
 
 This plugin accepts horizontal and vertical orientation
 
