@@ -1,14 +1,26 @@
 #main {
-	margin: 100px;
+    margin: 100px;
+}
+
+#main h2 {
+    font-size: 16px;
+    margin: 0 0 20px 0;
+}
+
+.mode {
+    border: 1px solid gray;
+    padding: 20px;
+    margin: 10px;
+    background-color: #EFEFEF;
 }
 
 .pager {
-	padding: 10px 10px 10px 0;
-	clear: both;
+    padding: 10px 10px 10px 0;
+    clear: both;
 }
 
-.inativo {
-	color: gray;
+.active {
+    color: gray;
 }
 
 #main .navlist ul {
@@ -20,12 +32,19 @@
 .mode-horizontal .navlist li {
     float: left;
     list-style-type: none;
-	padding: 5px 1px;
-	width: 80px;
+    padding: 5px 1px;
+    width: 80px;
 }
 
 .mode-vertical .navlist li {
-	padding: 5px;
+    padding: 5px;
+}
+
+.mode-horizontal-slider .image-list li {
+    float: left;
+    list-style-type: none;
+    padding: 5px 1px;
+    width: 145px;
 }
 
 #main .navlist a {

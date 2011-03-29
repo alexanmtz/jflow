@@ -8,119 +8,178 @@
     <script src="js/jquery.scrollTo-min.js" type="text/javascript"></script>
     <script src="js/jquery.jflow.js" type="text/javascript"></script>
     <script type="text/javascript">
-        $(function(){
-           //plugin com as funcoes default
-		   $('.mode-vertical .navcontainer').jflow({
-		   		mode : 'vertical',
-				item: '.mode-vertical .navlist li',
-				prev: '.mode-vertical .pager .ant',
-            	next: '.mode-vertical .pager .prox',
-				pager: '.mode-vertical .pager'
-				
-		   });
-			
-		   $('.mode-horizontal .navcontainer').jflow({
-		   		mode : 'horizontal',
-				item: '.mode-horizontal .navlist li',
-				prev: '.mode-horizontal .pager .ant',
-            	next: '.mode-horizontal .pager .prox',
-				pager: '.mode-horizontal .pager'
-		   });
-
+    $(function(){
+        //mode vertical
+        $('.mode-vertical .navcontainer').jflow({
+            mode: 'vertical',
+            item: '.mode-vertical .navlist li',
+            prev: '.mode-vertical .pager .ant',
+            next: '.mode-vertical .pager .prox',
+            pager: '.mode-vertical .pager'
+        
         });
+        
+        
+        //mode horizontal
+        $('.mode-horizontal .navcontainer').jflow({
+            mode: 'horizontal',
+            item: '.mode-horizontal .navlist li',
+            prev: '.mode-horizontal .pager .ant',
+            next: '.mode-horizontal .pager .prox',
+            pager: '.mode-horizontal .pager'
+        });
+        
+        // mode horizontal with images
+        $('.mode-horizontal-slider .images').jflow({
+            mode: 'horizontal',
+            item: '.mode-horizontal-slider .images li',
+            prev: '.mode-horizontal-slider .ant',
+            next: '.mode-horizontal-slider .prox',
+            pager: '.mode-horizontal-slider .pager'
+        });
+        
+        
+    });
     </script>
 </head>
 
 <body>
-
 	<div id="main">
-		<div class="mode-horizontal">
-	        <div class="navcontainer">
-	            <ul class="navlist">
-	                <li class="active">
-	                    <a href="#" id="current">Item 1</a>
-	                </li>
-	                <li>
-	                    <a href="#">Item 2</a>
-	                </li>
-	                <li>
-	                    <a href="#">Item 3</a>
-	                </li>
-	                <li>
-	                    <a href="#">Item 4</a>
-	                </li>
-	                <li>
-	                    <a href="#">Item 5</a>
-	                </li>
-					<li>
-	                    <a href="#">Item 6</a>
-	                </li>
-					<li>
-	                    <a href="#">Item 7</a>
-	                </li>
-					<li>
-	                    <a href="#">Item 8</a>
-	                </li>
-					<li>
-	                    <a href="#">Item 9</a>
-	                </li>
-	            </ul>
-	        </div>
-			<div class="pager">
-				<a href="#" class="ant">anterior</a>
-				<a href="#" class="prox">proximo</a>
-			</div>
+    <div class="mode mode-horizontal">
+    <h2>Horizontal mode</h2>  
+        <div class="navcontainer">
+            <ul class="navlist">
+                <li>
+                    <a href="#">Item 1</a>
+                </li>
+                <li>
+                    <a href="#">Item 2</a>
+                </li>
+                <li>
+                    <a href="#">Item 3</a>
+                </li>
+                <li>
+                    <a href="#">Item 4</a>
+                </li>
+                <li>
+                    <a href="#">Item 5</a>
+                </li>
+                <li>
+                    <a href="#">Item 6</a>
+                </li>
+                <li>
+                    <a href="#">Item 7</a>
+                </li>
+                <li>
+                    <a href="#">Item 8</a>
+                </li>
+                <li>
+                    <a href="#">Item 9</a>
+                </li>
+            </ul>
+        </div>
+        <div class="pager">
+            <a href="#" class="ant">previous</a>
+            <a href="#" class="prox">next</a>
+        </div>
 		</div>
-		
-		<div class="mode-vertical">
-	        <div class="navcontainer">
-	            <ul class="navlist">
-	                <li class="active">
-	                    <a href="#" id="current">Item 1</a>
-	                </li>
-	                <li>
-	                    <a href="#">Item 2</a>
-	                </li>
-	                <li>
-	                    <a href="#">Item 3</a>
-	                </li>
-	                <li>
-	                    <a href="#">Item 4</a>
-	                </li>
-	                <li>
-	                    <a href="#">Item 5</a>
-	                </li>
-					<li>
-	                    <a href="#">Item 6</a>
-	                </li>
-					<li>
-	                    <a href="#">Item 7</a>
-	                </li>
-					<li>
-	                    <a href="#">Item 8</a>
-	                </li>
-					<li>
-	                    <a href="#">Item 9</a>
-	                </li>
-					<li>
-	                    <a href="#">Item 10</a>
-	                </li>
-					<li>
-	                    <a href="#">Item 11</a>
-	                </li>
-					<li>
-	                    <a href="#">Item 12</a>
-	                </li>
-					<li>
-	                    <a href="#">Item 13</a>
-	                </li>
-	            </ul>
-	        </div>
-			<div class="pager">
-				<a href="#" class="ant">anterior</a>
-				<a href="#" class="prox">proximo</a>
-			</div>
-		</div>
+     <div class="mode mode-vertical">
+         <h2>Vertical mode</h2>
+         <div class="navcontainer">
+             <ul class="navlist">
+                 <li>
+                     <a href="#">Item 1</a>
+                 </li>
+                 <li>
+                     <a href="#">Item 2</a>
+                 </li>
+                 <li>
+                     <a href="#">Item 3</a>
+                 </li>
+                 <li>
+                     <a href="#">Item 4</a>
+                 </li>
+                 <li>
+                     <a href="#">Item 5</a>
+                 </li>
+                 <li>
+                     <a href="#">Item 6</a>
+                 </li>
+                 <li>
+                     <a href="#">Item 7</a>
+                 </li>
+                 <li>
+                     <a href="#">Item 8</a>
+                 </li>
+                 <li>
+                     <a href="#">Item 9</a>
+                 </li>
+                 <li>
+                     <a href="#">Item 10</a>
+                 </li>
+                 <li>
+                     <a href="#">Item 11</a>
+                 </li>
+                 <li>
+                     <a href="#">Item 12</a>
+                 </li>
+                 <li>
+                     <a href="#">Item 13</a>
+                 </li>
+             </ul>
+         </div>
+         <div class="pager">
+             <a href="#" class="ant">previous</a>
+             <a href="#" class="prox">next</a>
+         </div>
+     </div>
+    <div class="mode mode-horizontal-slider">
+    <h2>Horizontal mode with images</h2>
+        <div class="images">
+            <ul class="image-list">
+                <li>
+                    <a href="#"><img src="img/pic01.jpg" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/pic2.jpg" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/pic13.jpg" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/pic4.jpg" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/pic5.jpg" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/pic6.jpg" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/pic7.jpg" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/pic8.jpg" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/pic9.jpg" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/pic14.jpg" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/pic11.jpg" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/pic12.jpg" /></a>
+                </li>
+            </ul>
+        </div>
+        <div class="pager">
+            <a href="#" class="ant">previous</a>
+            <a href="#" class="prox">next</a>
+        </div>
+    </div>
 	</div>
             
 </body>
