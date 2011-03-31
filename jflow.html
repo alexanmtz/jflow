@@ -6,11 +6,11 @@
 
     <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
     <script src="js/jquery.scrollTo-min.js" type="text/javascript"></script>
-    <script src="js/jquery.jflow.js" type="text/javascript"></script>
+    <script src="js/jquery.sliding.js" type="text/javascript"></script>
     <script type="text/javascript">
     $(function(){
         //mode vertical
-        $('.mode-vertical .navcontainer').jflow({
+        $('.mode-vertical .navcontainer').sliding({
             mode: 'vertical',
             item: '.mode-vertical .navlist li',
             prev: '.mode-vertical .pager .ant',
@@ -21,7 +21,7 @@
         
         
         //mode horizontal
-        $('.mode-horizontal .navcontainer').jflow({
+        $('.mode-horizontal .navcontainer').sliding({
             mode: 'horizontal',
             item: '.mode-horizontal .navlist li',
             prev: '.mode-horizontal .pager .ant',
@@ -30,7 +30,7 @@
         });
         
         // mode horizontal with images
-        $('.mode-horizontal-slider .images').jflow({
+        $('.mode-horizontal-slider .images').sliding({
             mode: 'horizontal',
             item: '.mode-horizontal-slider .images li',
             prev: '.mode-horizontal-slider .ant',

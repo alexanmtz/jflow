@@ -1,4 +1,9 @@
-# jFlow
+# jQuery sliding
+> Version 1.4
+  * All the descriptions in English
+  * Refactor in tests to keep more easy to maintain
+  * Fix bug in navigation when there more than one sliding
+
 > Version 1.3
 	* Add active class in current active item of pagination
 	* Fix bug that don't activate it the current item when use previous and next
