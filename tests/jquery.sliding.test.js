@@ -333,6 +333,27 @@ test("Callback for next event", function(){
 module("jQuery sliding vertical", {
     setup: function(){
         jQuery.fx.off = true;
+        this.fitsInContainer = function(final_pos) {
+            $('#sliding').find('.horizontal-item').each(function(i, el){
+            
+                var el_pos = $(this).position();
+                if (el_pos.left < final_pos) {
+                    ok(true, 'is out');
+                }
+                
+            });
+        };
+        this.isReallyVisible = function(final_pos, container_pos) {
+            $('#sliding').find('.horizontal-item').slice(5, 10).each(function(i, el){
+                var el_pos = $(this).position();
+                if (el_pos.left < final_pos && el_pos.left >= container_pos.left) {
+                    ok(true, 'The element is in');
+                }
+                else {
+                    ok(false, 'The element is out');
+                }
+            });
+        };
     },
     teardown: function(){
         $('#sliding').remove();
@@ -366,14 +387,7 @@ test("The container change to overflow hidden and hiddes the other itens", funct
     
     equals(current_overflow, 'hidden', 'e preciso ter overflow hidden');
     
-    $('#sliding').find('.horizontal-item').each(function(i, el){
-    
-        var el_pos = $(this).position();
-        if (el_pos.left < final_pos) {
-            ok(true, 'is out');
-        }
-        
-    });
+    this.fitsInContainer(final_pos);
 });
 
 test("The container give the right dimensions when add margin and padding", function(){
@@ -405,14 +419,7 @@ test("The container give the right dimensions when add margin and padding", func
     
     equals(current_overflow, 'hidden', 'has to be overflow hidden');
     
-    $('#sliding').find('.horizontal-item').each(function(i, el){
-    
-        var el_pos = $(this).position();
-        if (el_pos.left < final_pos) {
-            ok(true, 'is out');
-        }
-        
-    });
+    this.fitsInContainer(final_pos);
 });
 
 test("It has to be the right dimensions if the height not specified", function(){
@@ -443,14 +450,7 @@ test("It has to be the right dimensions if the height not specified", function()
     
     equals(current_overflow, 'hidden', 'it have to be overflow hidden');
     
-    $('#sliding').find('.horizontal-item').each(function(i, el){
-    
-        var el_pos = $(this).position();
-        if (el_pos.left < final_pos) {
-            ok(true, 'it has to be overflow hidden');
-        }
-        
-    });
+    this.fitsInContainer(final_pos);
 });
 
 test("The markup is not a list", function(){
@@ -478,14 +478,7 @@ test("The markup is not a list", function(){
     
     equals(current_overflow, 'hidden', 'it has to be overflow hidden');
     
-    $('#sliding').find('.horizontal-item').each(function(i, el){
-    
-        var el_pos = $(this).position();
-        if (el_pos.left < final_pos) {
-            ok(true, 'is out');
-        }
-        
-    });
+    this.fitsInContainer(final_pos);
 });
 
 test("Less itens than the minimum disable the buttons", function(){
@@ -520,13 +513,7 @@ test("Less itens than the minimum disable the buttons", function(){
     var container_pos = $('#sliding').position();
     var final_pos = current_width + container_pos.left;
     
-    $('#sliding').find('.horizontal-item').each(function(i, el){
-    
-        var el_pos = $(this).position();
-        if (el_pos.left < final_pos) {
-            ok(true, 'is out');
-        }
-    });
+    this.fitsInContainer(final_pos);
 });
 
 test("The start pagination show the itens correctly", function(){
@@ -579,22 +566,8 @@ test("When clicked go to next page and disable the previous button", function(){
     var current_width = $('#sliding').width();
     var container_pos = $('#sliding').position();
     var final_pos = current_width + container_pos.left;
-    function verificaContainer(){
-        $('#sliding').find('.horizontal-item').slice(5, 10).each(function(i, el){
-            var el_pos = $(this).position();
-            if (el_pos.left < final_pos && el_pos.left >= container_pos.left) {
-                ok(true, 'The element is in');
-            }
-            else {
-                ok(false, 'The element is out');
-            }
-        });
-        start();
-        
-    }
     $('#sliding-horizontal-next').trigger('click');
-    stop();
-    window.setTimeout(verificaContainer, 800);
+    this.isReallyVisible(final_pos, container_pos);
     
 });
 
@@ -614,20 +587,7 @@ test("Pagination in horizontal mode", function(){
     var current_width = $('#sliding').width();
     var container_pos = $('#sliding').position();
     var final_pos = current_width + container_pos.top;
-    function verificaContainer(){
-        $('#sliding').find('.noticia-plantao').slice(5, 10).each(function(i, el){
-            var el_pos = $(this).position();
-            if (el_pos.left < final_pos && el_pos.top >= container_pos.left) {
-                ok(true, 'The element is in');
-            }
-            else {
-                ok(false, 'the element is out');
-            }
-        });
-        start();
-        
-    }
+    
     $('#sliding-page-1').trigger('click');
-    stop();
-    window.setTimeout(verificaContainer, 800);
+    this.isReallyVisible(final_pos, container_pos);
 });
