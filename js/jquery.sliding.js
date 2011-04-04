@@ -35,7 +35,7 @@
  */
 (function($){
     $.fn.sliding = function(params){
-    
+      return this.each(function(){
         var options = {
             item: '.sliding-item',
             itens: 5,
@@ -45,15 +45,17 @@
             mode: 'vertical',
             pager: false,
             speed: 800,
-            onNext: function(){}
+            onNext: function(){
+            }
         }
         
         var op = $.extend(options, params);
-        var $self = this;
+        var self = this;
+        var $self = $(this);
         var count = 0;
         var $flowbox = $(op.item);
         var li_count = $(op.item).length;
-		var page = 1;
+        var page = 1;
         
         if (li_count <= op.itens) {
             $(op.next).addClass(op.inativeClass);
@@ -92,14 +94,15 @@
         if (op.pager) {
         
             var pager = '';
-            for (var i = 1; i < pages+1; i++) {
-				if(i==1) {
-					var currentClass = 'sliding-page-item active';	
-				} else {
-					var currentClass = 'sliding-page-item';
-				}
-				 
-                pager += '<li><a href="#" class="'+currentClass+'" id="sliding-page-' + i + '">pagina ' + i + '</a></li>';
+            for (var i = 1; i < pages + 1; i++) {
+                if (i == 1) {
+                    var currentClass = 'sliding-page-item active';
+                }
+                else {
+                    var currentClass = 'sliding-page-item';
+                }
+                
+                pager += '<li><a href="#" class="' + currentClass + ' sliding-page-' + i + '">page ' + i + '</a></li>';
             }
             $(op.pager).append('<ul>' + pager + '</ul>');
         }
@@ -110,9 +113,9 @@
                 $self.scrollTo($(op.item).eq(count), op.speed, {
                     onAfter: function(){
                         page--;
-						$('.sliding-page-item').removeClass('active');
-						$("#sliding-page-"+page).addClass('active');
-						if (count == 0) {
+                        $(op.pager).find('.sliding-page-item').removeClass('active');
+                        $(op.pager).find(".sliding-page-" + page).addClass('active');
+                        if (count == 0) {
                             $(op.prev).addClass(op.inativeClass);
                         }
                     }
@@ -129,10 +132,10 @@
                 count += op.itens;
                 $self.scrollTo($(op.item).eq(count), op.speed, {
                     onAfter: function(){
-                        page ++;
-						$('.sliding-page-item').removeClass('active');
-						$("#sliding-page-"+page).addClass('active');
-						if (count >= max_itens) {
+                        page++;
+                        $(op.pager).find('.sliding-page-item').removeClass('active');
+                        $(op.pager).find(".sliding-page-" + page).addClass('active');
+                        if (count >= max_itens) {
                             $(op.next).addClass(op.inativeClass);
                         }
                         op.onNext.call(this);
@@ -150,7 +153,7 @@
             $('.sliding-page-item').removeClass('active');
             $target.addClass('active');
             if ($target.is('a')) {
-                var index = $target.attr('id').split('-')[2] -1;
+                var index = $target.parent().index();
                 count = index * op.itens;
                 $self.scrollTo($(op.item).eq(count), op.speed, {
                     onAfter: function(){
@@ -168,6 +171,6 @@
             return false;
         });
         
-    };
-    
+    });
+  };    
 })(jQuery);

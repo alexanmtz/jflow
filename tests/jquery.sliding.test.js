@@ -254,9 +254,9 @@ test("Add class in current item that is paging", function(){
         pager: '#sliding-pager'
     });
     
-    $('#sliding-page-1').trigger('click');
-    ok($('#sliding-page-1').hasClass('active'), "The item has to be the current class");
-    ok(!$('.sliding-page-item').not('#sliding-page-1').hasClass('active'), "The other class cant have active class");
+    $('.sliding-page-1').trigger('click');
+    ok($('.sliding-page-1').hasClass('active'), "The item has to be the current class");
+    ok(!$('.sliding-page-item').not('.sliding-page-1').hasClass('active'), "The other class cant have active class");
     
 });
 
@@ -273,8 +273,8 @@ test("Insert active class when click in next", function(){
     });
     
     $('#sliding-next').trigger('click');
-    ok($('#sliding-page-2').hasClass('active'), "The item has to be the active class");
-    ok(!$('.sliding-page-item').not('#sliding-page-2').hasClass('active'), "the other itens cant have the active class");
+    ok($('.sliding-page-2').hasClass('active'), "The item has to be the active class");
+    ok(!$('.sliding-page-item').not('.sliding-page-2').hasClass('active'), "the other itens cant have the active class");
     
 });
 
@@ -290,8 +290,8 @@ test("Start with the first pagination item active", function(){
         pager: '#sliding-pager'
     });
     
-    ok($('#sliding-page-1').hasClass('active'), "The item has to be the active class");
-    ok(!$('.sliding-page-item').not('#sliding-page-1').hasClass('active'), "the other itens cant have the active class");
+    ok($('.sliding-page-1').hasClass('active'), "The item has to be the active class");
+    ok(!$('.sliding-page-item').not('.sliding-page-1').hasClass('active'), "the other itens cant have the active class");
     
 });
 

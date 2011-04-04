@@ -10,32 +10,31 @@
     <script type="text/javascript">
     $(function(){
         //mode vertical
-        $('.mode-vertical .navcontainer').sliding({
+        $('.mode-vertical .navcontainer-vertical').sliding({
             mode: 'vertical',
             item: '.mode-vertical .navlist li',
-            prev: '.mode-vertical .pager .ant',
-            next: '.mode-vertical .pager .prox',
-            pager: '.mode-vertical .pager'
+            prev: '.mode-vertical .navigation-vertical .ant',
+            next: '.mode-vertical .navigation-vertical .prox',
+            pager: '.mode-vertical .pager-vertical'
         
         });
         
-        
         //mode horizontal
-        $('.mode-horizontal .navcontainer').sliding({
+        $('.mode-horizontal .navcontainer-horizontal').sliding({
             mode: 'horizontal',
             item: '.mode-horizontal .navlist li',
-            prev: '.mode-horizontal .pager .ant',
-            next: '.mode-horizontal .pager .prox',
-            pager: '.mode-horizontal .pager'
+            prev: '.mode-horizontal .navigation-horizontal .ant',
+            next: '.mode-horizontal .navigation-horizontal .prox',
+            pager: '.mode-horizontal .pager-horizontal'
         });
         
         // mode horizontal with images
         $('.mode-horizontal-slider .images').sliding({
             mode: 'horizontal',
             item: '.mode-horizontal-slider .images li',
-            prev: '.mode-horizontal-slider .ant',
-            next: '.mode-horizontal-slider .prox',
-            pager: '.mode-horizontal-slider .pager'
+            prev: '.navigation-images .ant',
+            next: '.navigation-images .prox',
+            pager: '.pager-images'
         });
         
         
@@ -47,7 +46,7 @@
 	<div id="main">
     <div class="mode mode-horizontal">
     <h2>Horizontal mode</h2>  
-        <div class="navcontainer">
+        <div class="navcontainer-horizontal">
             <ul class="navlist">
                 <li>
                     <a href="#">Item 1</a>
@@ -78,14 +77,15 @@
                 </li>
             </ul>
         </div>
-        <div class="pager">
-            <a href="#" class="ant">previous</a>
-            <a href="#" class="prox">next</a>
+        <div class="navigation-horizontal">
+          <a href="#" class="ant">previous</a>
+          <a href="#" class="prox">next</a>
         </div>
+        <div class="pager-horizontal"></div>
 		</div>
      <div class="mode mode-vertical">
          <h2>Vertical mode</h2>
-         <div class="navcontainer">
+         <div class="navcontainer-vertical">
              <ul class="navlist">
                  <li>
                      <a href="#">Item 1</a>
@@ -128,10 +128,11 @@
                  </li>
              </ul>
          </div>
-         <div class="pager">
-             <a href="#" class="ant">previous</a>
-             <a href="#" class="prox">next</a>
-         </div>
+         <div class="navigation-vertical">
+          <a href="#" class="ant">previous</a>
+          <a href="#" class="prox">next</a>
+        </div>
+         <div class="pager-vertical"></div>
      </div>
     <div class="mode mode-horizontal-slider">
     <h2>Horizontal mode with images</h2>
@@ -175,10 +176,11 @@
                 </li>
             </ul>
         </div>
-        <div class="pager">
-            <a href="#" class="ant">previous</a>
-            <a href="#" class="prox">next</a>
+        <div class="navigation-images">
+          <a href="#" class="ant">previous</a>
+          <a href="#" class="prox">next</a>
         </div>
+        <div class="pager-images"></div>
     </div>
 	</div>
             

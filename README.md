@@ -1,12 +1,4 @@
 # jQuery sliding
-> Version 1.4
-  * All the descriptions in English
-  * Refactor in tests to keep more easy to maintain
-  * Fix bug in navigation when there more than one sliding
-
-> Version 1.3
-	* Add active class in current active item of pagination
-	* Fix bug that don't activate it the current item when use previous and next
 
 # About the plugin ?
 
@@ -20,6 +12,16 @@ This plugin accepts horizontal and vertical orientation
 * Pagination
 * Vertical and horizontal orientation
 * You can choose the item will be slided inside any markup
+
+# Changelog
+> Version 1.3.1
+  * All the descriptions in English
+  * Refactor in tests to keep more easy to maintain
+  * Changed the plugin name to sliding because jFlow already exist
+
+> Version 1.3
+	* Add active class in current active item of pagination
+	* Fix bug that don't activate it the current item when use previous and next
 
 # Where is been used?
 

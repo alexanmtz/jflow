@@ -19,7 +19,7 @@
     clear: both;
 }
 
-.active {
+.active, .inativo {
     color: gray;
 }
 
