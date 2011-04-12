@@ -1,10 +1,10 @@
 # jQuery jflow
 
-# Notice ?
+# Notice 
 
 I'm not maintain this plugin anymore, even if still usefull, I'm developing a new [jQuery sliding plugin](https://github.com/alexanmtz/sliding) instead
 
-# About the plugin ?
+# About the plugin 
 
 This plugin is alternative for slider / carousel plugins out there. The reason that I develop this one is that I was needed a carousel
 that could support more complex markup structure inside the carousel container. Besides that, this is the first carousel plugin developed with TDD.
