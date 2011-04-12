@@ -2,6 +2,8 @@
 
 # Notice 
 
+There's already a jflow plugin for jQuery, so I changed the name to jQuery sliding
+
 I'm not maintain this plugin anymore, even if still usefull, I'm developing a new [jQuery sliding plugin](https://github.com/alexanmtz/sliding) instead
 
 # About the plugin 
