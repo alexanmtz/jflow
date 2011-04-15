@@ -110,7 +110,7 @@
         $(op.prev).addClass(op.inativeClass).bind('click', function(){
             if (count > 0) {
                 count -= op.itens;
-                $self.scrollTo($(op.item).eq(count), op.speed, {
+                $self.clearQueue('fx').scrollTo($(op.item).eq(count), op.speed, {
                     onAfter: function(){
                         page--;
                         $(op.pager).find('.sliding-page-item').removeClass('active');
@@ -130,7 +130,7 @@
         $(op.next).bind('click', function(){
             if (count < max_itens) {
                 count += op.itens;
-                $self.scrollTo($(op.item).eq(count), op.speed, {
+                $self.clearQueue('fx').scrollTo($(op.item).eq(count), op.speed, {
                     onAfter: function(){
                         page++;
                         $(op.pager).find('.sliding-page-item').removeClass('active');
@@ -155,7 +155,7 @@
             if ($target.is('a')) {
                 var index = $target.parent().index();
                 count = index * op.itens;
-                $self.scrollTo($(op.item).eq(count), op.speed, {
+                $self.clearQueue('fx').scrollTo($(op.item).eq(count), op.speed, {
                     onAfter: function(){
                         if (count >= max_itens) {
                             $(op.next).addClass(op.inativeClass);
