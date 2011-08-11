@@ -2,8 +2,6 @@
 
 # Notice 
 
-There's already a jflow plugin for jQuery, so I changed the name to jQuery sliding
-
 I'm not maintain this plugin anymore, even if still usefull, I'm developing a new [jQuery sliding plugin](https://github.com/alexanmtz/sliding) instead
 
 # About the plugin 
@@ -20,12 +18,12 @@ This plugin accepts horizontal and vertical orientation
 * You can choose the item will be slided into complex markups
 
 # Changelog
-> Version 1.3.1
+* Version 1.3.1
   * All the descriptions in English
   * Refactor in tests to keep more easy to maintain
   * Changed the plugin name to sliding because jFlow already exist
 
-> Version 1.3
+* Version 1.3
 	* Add active class in current active item of pagination
 	* Fix bug that don't activate it the current item when use previous and next
 
@@ -54,8 +52,8 @@ If you wish to use with ajax for a larg amount of itens, I'm working on that for
 
 
 # In a nutshell:
-  <script type="text/javascript" src="jquery-jflow.js"></script>
-  <script type="text/javascript">
+    <script type="text/javascript" src="jquery-jflow.js"></script>
+    <script type="text/javascript">
      $(function(){
         $("#vertical").jflow({
            mode : "vertical",
@@ -65,7 +63,7 @@ If you wish to use with ajax for a larg amount of itens, I'm working on that for
             pager: "#pager"
         });
      });
-  </script>
+    </script>
 
 # Documentation
 	
