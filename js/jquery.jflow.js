@@ -34,7 +34,8 @@
  *
  */
 (function($){
-    $.fn.sliding = function(params){
+
+    $.fn.jflow = function(params){
       return this.each(function(){
         var options = {
             item: '.sliding-item',
@@ -48,7 +49,7 @@
             onNext: function(){
             }
         }
-        
+
         var op = $.extend(options, params);
         var self = this;
         var $self = $(this);
@@ -56,7 +57,7 @@
         var $flowbox = $(op.item);
         var li_count = $(op.item).length;
         var page = 1;
-        
+
         if (li_count <= op.itens) {
             $(op.next).addClass(op.inativeClass);
         }
@@ -67,14 +68,14 @@
         else {
             li_amount = op.itens;
         }
-        
+
         var max_itens = li_count - op.itens;
         var flowbox_dimensions = op.mode == 'vertical' ? $flowbox.outerHeight(true) : $flowbox.outerWidth(true);
         var li_size = flowbox_dimensions;
         var overall_size = li_count * flowbox_dimensions;
         var overflow_size = li_size * li_amount;
         var pages = Math.ceil(li_count / op.itens);
-        
+
         if (op.mode == 'vertical') {
             $self.css({
                 'height': overflow_size,
@@ -90,9 +91,9 @@
                 'width': overall_size
             });
         }
-        
+
         if (op.pager) {
-        
+
             var pager = '';
             for (var i = 1; i < pages + 1; i++) {
                 if (i == 1) {
@@ -101,13 +102,13 @@
                 else {
                     var currentClass = 'sliding-page-item';
                 }
-                
+
                 pager += '<li><a href="#" class="' + currentClass + ' sliding-page-' + i + '">page ' + i + '</a></li>';
             }
             $(op.pager).append('<ul>' + pager + '</ul>');
         }
-        
-        $(op.prev).addClass(op.inativeClass).bind('click', function(){
+
+        $(op.prev).addClass(op.inativeClass).unbind('click.sliding').bind('click.sliding', function(){
             if (count > 0) {
                 count -= op.itens;
                 $self.clearQueue('fx').scrollTo($(op.item).eq(count), op.speed, {
@@ -126,8 +127,8 @@
             $(this).blur();
             return false;
         });
-        
-        $(op.next).bind('click', function(){
+
+        $(op.next).unbind('click.sliding').bind('click.sliding', function(){
             if (count < max_itens) {
                 count += op.itens;
                 $self.clearQueue('fx').scrollTo($(op.item).eq(count), op.speed, {
@@ -147,8 +148,8 @@
             $(this).blur();
             return false;
         });
-        
-        $(op.pager).bind('click', function(e){
+
+        $(op.pager).unbind('click.sliding').bind('click.sliding', function(e){
             var $target = $(e.target);
             $('.sliding-page-item').removeClass('active');
             $target.addClass('active');
@@ -170,7 +171,7 @@
             }
             return false;
         });
-        
+
     });
-  };    
+  };
 })(jQuery);

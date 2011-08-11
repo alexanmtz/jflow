@@ -6,38 +6,38 @@
 
     <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
     <script src="js/jquery.scrollTo-min.js" type="text/javascript"></script>
-    <script src="js/jquery.sliding.js" type="text/javascript"></script>
+    <script src="js/jquery.jflow.js" type="text/javascript"></script>
     <script type="text/javascript">
     $(function(){
         //mode vertical
-        $('.mode-vertical .navcontainer-vertical').sliding({
+        $('.mode-vertical .navcontainer-vertical').jflow({
             mode: 'vertical',
             item: '.mode-vertical .navlist li',
             prev: '.mode-vertical .navigation-vertical .ant',
             next: '.mode-vertical .navigation-vertical .prox',
             pager: '.mode-vertical .pager-vertical'
-        
+
         });
-        
+
         //mode horizontal
-        $('.mode-horizontal .navcontainer-horizontal').sliding({
+        $('.mode-horizontal .navcontainer-horizontal').jflow({
             mode: 'horizontal',
             item: '.mode-horizontal .navlist li',
             prev: '.mode-horizontal .navigation-horizontal .ant',
             next: '.mode-horizontal .navigation-horizontal .prox',
             pager: '.mode-horizontal .pager-horizontal'
         });
-        
+
         // mode horizontal with images
-        $('.mode-horizontal-slider .images').sliding({
+        $('.mode-horizontal-slider .images').jflow({
             mode: 'horizontal',
             item: '.mode-horizontal-slider .images li',
             prev: '.navigation-images .ant',
             next: '.navigation-images .prox',
             pager: '.pager-images'
         });
-        
-        
+
+
     });
     </script>
 </head>
@@ -45,7 +45,7 @@
 <body>
 	<div id="main">
     <div class="mode mode-horizontal">
-    <h2>Horizontal mode</h2>  
+    <h2>Horizontal mode</h2>
         <div class="navcontainer-horizontal">
             <ul class="navlist">
                 <li>
@@ -183,6 +183,6 @@
         <div class="pager-images"></div>
     </div>
 	</div>
-            
+
 </body>
 </html>

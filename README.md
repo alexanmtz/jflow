@@ -115,21 +115,21 @@ If you wish to use with ajax for a larg amount of itens, I'm working on that for
 
 ## Markup  
   
-  <div id="container">
-   	<ul>
-   		<li>item 1</li>
-   		<li>item 2</li>
-   		<li>item 3</li>
-   		<li>item 4</li>
-   	</ul>
-   </div>
+    <div id="container">
+   	    <ul>
+   		      <li>item 1</li>
+   		      <li>item 2</li>
+   		      <li>item 3</li>
+   		      <li>item 4</li>
+   	      </ul>
+    </div>
    
 ## Javascript
-   <script type="text/javascript">
+    <script type="text/javascript">
 	   $(function(){
 		   $('#container').sliding({
 		   	itens: 3,
 		   	mode: 'horizontal'
 		   });
 	   });
-   </script>
+    </script>
