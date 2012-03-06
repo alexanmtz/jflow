@@ -18,6 +18,8 @@ This plugin accepts horizontal and vertical orientation
 * You can choose the item will be slided into complex markups
 
 # Changelog
+* Version 1.3.2
+  * easing support
 * Version 1.3.1
   * All the descriptions in English
   * Refactor in tests to keep more easy to maintain
@@ -34,6 +36,7 @@ G1 at Globo.com - http://g1.globo.com/
 # Requirements
 
 jquery.scrollTo - http://flesler.blogspot.com/2007/10/jqueryscrollto.html
+jquery.easing (optional) - http://gsgd.co.uk/sandbox/jquery/easing/
 
 # Tested
 
@@ -42,13 +45,13 @@ jquery.scrollTo - http://flesler.blogspot.com/2007/10/jqueryscrollto.html
 
 # Issues
 
-* You must define width (horizontal mode) or height (vertical mode) to the slide calculate where will finish the container. If the itens are variable they still works,
-but the itens not exactly will fit at container
+* You must define width (horizontal mode) or height (vertical mode) to the slide calculate where will finish the container. If the items are variable they still works,
+but the items not exactly will fit at container
 
 * The slide works at itens already loaded, just hidding the subsequent ones. This plugin follow this UI pattern: http://developer.yahoo.com/ypatterns/selection/carousel.html
-If you wish to use with ajax for a larg amount of itens, I'm working on that for next releases.
+If you wish to use with ajax for a large amount of itens, use [jQuery sliding plugin](https://github.com/alexanmtz/sliding) instead
 
-* For horizontal slider, you should use float instead display: inline and not use margin topo or padding top in itens, you could set theses properties on outermost container
+* For horizontal slider, you should use float instead display: inline and not use margin top or padding top at items, you could set theses properties on outermost container
 
 
 # In a nutshell:
@@ -74,10 +77,10 @@ If you wish to use with ajax for a larg amount of itens, I'm working on that for
 * default: .jflow-item
 * description: The selector used as reference. This will be the item slided
 
-## itens
+## items
 * type: Number
 * default: 5
-* description: Itens amount that will be slided per time
+* description: Items amount that will be slided per time
 
 ## inativeClass
 * type: String
@@ -97,7 +100,7 @@ If you wish to use with ajax for a larg amount of itens, I'm working on that for
 ## mode
 * type: String
 * default: vertical
-* description: orientation mode, this parameter accepts orizontal and vertical
+* description: orientation mode, this parameter accepts horizontal and vertical
 
 ## speed
 * type: Number
@@ -107,7 +110,7 @@ If you wish to use with ajax for a larg amount of itens, I'm working on that for
 ## pager
 * type: Boolean or String
 * default: false
-* description: False to not use pagination or the pagination container to generate paging to navigate throught slides		
+* description: False to not use pagination or the pagination container to generate paging to navigate through slides		
 
 #Examples
 

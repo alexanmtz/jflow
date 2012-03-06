@@ -3,7 +3,6 @@
  * @name sliding
  * @namespace jQuery
  * @author Alexandre Magno (http://blog.alexandremagno.net)
- * @version 1.3
  * @description A complete sliding carousel
  * @requires jquery.scrollTo
  * @param {Object} params Plugin options
@@ -45,6 +44,7 @@
             next: '.sliding-next a',
             mode: 'vertical',
             pager: false,
+            easing: 'easeInOutQuad',
             speed: 800,
             onNext: function(){
             }
@@ -131,7 +131,7 @@
         $(op.next).unbind('click.sliding').bind('click.sliding', function(){
             if (count < max_itens) {
                 count += op.itens;
-                $self.clearQueue('fx').scrollTo($(op.item).eq(count), op.speed, {
+                $self.clearQueue('fx').scrollTo($(op.item).eq(count), op.speed, op.easing, {
                     onAfter: function(){
                         page++;
                         $(op.pager).find('.sliding-page-item').removeClass('active');
