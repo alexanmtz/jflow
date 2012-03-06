@@ -18,7 +18,7 @@ This plugin accepts horizontal and vertical orientation
 * You can choose the item will be slided into complex markups
 
 # Changelog
-* Version 1.3.2
+* Version 1.4
   * easing support
 * Version 1.3.1
   * All the descriptions in English
